@@ -3,9 +3,9 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 
 	actions: {
-		addTodo(text) {
-			this.get('todos').pushObject({ text: text });
+		submit() {
+			const text = this.get('text');
+			this.get('onAdd')(text);
 		}
 	}
-
 });
